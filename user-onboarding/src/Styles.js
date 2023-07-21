@@ -75,9 +75,7 @@ button {
     background-color: #f16868 ;
 }
 
-#income-good {
-    width: 10%;
-}
+
 
 #inputParent {
     display: flex;
@@ -92,5 +90,8 @@ button {
         font-size: 2rem;
     }
 
+    #selectterms {
+        width: 1.2rem;
+    }
 }
 `

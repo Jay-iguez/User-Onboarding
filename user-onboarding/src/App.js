@@ -28,7 +28,7 @@ mainBody.style.background = " #cdf3e7 "
 
 const [formValues, setFormValues] = useState(initialFormValues)
 const [formErrors, setFormErrors] = useState(intialErrorValues)
-
+const [termsSet, setTermsSet] = useState(false)
 
   return (
     <>
@@ -63,7 +63,9 @@ const [formErrors, setFormErrors] = useState(intialErrorValues)
       formValues={formValues} 
       setFormValues={setFormValues} 
       formErrors={formErrors} 
-      setFormErrors={setFormErrors} 
+      setFormErrors={setFormErrors}
+      termsSet={termsSet}
+      setTermsSet={setTermsSet} 
       initialFormValues={initialFormValues} 
       intialErrorValues={intialErrorValues}
       />
