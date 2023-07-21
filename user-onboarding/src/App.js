@@ -6,7 +6,19 @@ import styled from 'styled-components'
 import Form from './Form';
 
 const initialFormValues = {
+name: "",
+email: "",
+password: "",
+terms: false,
+money: ""
+}
 
+const intialErrorValues = {
+  name: "",
+  email: "",
+  password: "",
+  terms: "",
+  money: ""
 }
 
 function App() {
@@ -15,6 +27,7 @@ const mainBody = document.querySelector("body")
 mainBody.style.background = " #cdf3e7 "
 
 const [formValues, setFormValues] = useState(initialFormValues)
+const [formErrors, setFormErrors] = useState(intialErrorValues)
 
   return (
     <>

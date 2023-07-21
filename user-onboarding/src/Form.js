@@ -51,6 +51,36 @@ export default function Form(props) {
                             <p>Click here to view our terms of service.</p>
                         </label>
                     }
+                    <label id="inputParent"> <p>Income</p>
+                    <span></span>
+                    <span id="income" class="alot">
+                        <input 
+                            type="radio"
+                            name="money"
+                            id="moneyselect"
+                            value="Alot"
+
+                        />
+                    </span>
+                    <span id="income" class="good">
+                        <input 
+                            type="radio"
+                            name="money"
+                            id="moneyselect"
+                            value="Good Amount"
+
+                        /> 
+                    </span>
+                    <span id="income" class="bad">
+                        <input
+                            type="radio"
+                            name="money"
+                            id="moneyselect"
+                            value="Financially Challenged"
+
+                        />
+                    </span>
+                    </label>
                     <label id="inputParent">
                             <button>Submit</button>
                     </label>

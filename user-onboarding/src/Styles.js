@@ -35,6 +35,8 @@ span {
 export const BodyStyledDiv = styled(HeadingStyledDiv)`
 background-color: #9be8d3 ;
 
+
+
 form {
     display: flex;
     justify-content: center;
@@ -44,6 +46,37 @@ form {
 
 span {
     background-color: #6255ea ;
+}
+
+button {
+    width: 20%;
+    height: 3rem;
+    font-size: 2rem;
+}
+
+#income {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    input {
+        width: 1.5rem;
+    }
+}
+
+.alot {
+    background-color: #94ff83 ;
+}
+
+.good {
+    background-color:  #f2ff83 ;
+}
+
+.bad {
+    background-color: #f16868 ;
+}
+
+#income-good {
+    width: 10%;
 }
 
 #inputParent {
@@ -58,5 +91,6 @@ span {
         text-align: center;
         font-size: 2rem;
     }
+
 }
 `
