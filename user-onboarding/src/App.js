@@ -29,6 +29,7 @@ mainBody.style.background = " #cdf3e7 "
 const [formValues, setFormValues] = useState(initialFormValues)
 const [formErrors, setFormErrors] = useState(intialErrorValues)
 
+
   return (
     <>
     <HeadingStyledDiv>
@@ -58,7 +59,14 @@ const [formErrors, setFormErrors] = useState(intialErrorValues)
       <p id="disclaimer">Please note your information showing up isn't actually a feature but a bug in our programming, it will be available for anyone to see so sorry about that.</p>
     </BodyStyledDiv>
     <>
-      <Form />
+      <Form 
+      formValues={formValues} 
+      setFormValues={setFormValues} 
+      formErrors={formErrors} 
+      setFormErrors={setFormErrors} 
+      initialFormValues={initialFormValues} 
+      intialErrorValues={intialErrorValues}
+      />
     </>
     </>
   );

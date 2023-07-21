@@ -1,6 +1,18 @@
 import { HeadingStyledDiv, BodyStyledDiv} from "./Styles"
 
 export default function Form(props) {
+
+    const { 
+        formValues, 
+        setFormValues, 
+        formErrors, 
+        setFormErrors, 
+        intialFormValues, 
+        intialFormErrors } = props
+
+        function change (e) {
+            
+        }
     
     return (
         <>
@@ -19,8 +31,9 @@ export default function Form(props) {
                             type="text"
                             name="name"
                             id="nameselect"
-                            value=""
+                            value={formValues.name}
                             placeholder="Name here please"
+                            onChange={(e) => change(e)}
                             
                         />
                     </label>
