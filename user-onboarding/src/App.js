@@ -33,7 +33,7 @@ mainBody.style.background = " #cdf3e7 "
 
 const [formValues, setFormValues] = useState(initialFormValues)
 const [formErrors, setFormErrors] = useState(intialErrorValues)
-const [userInput, setUserInput] = useState(initialFormValues)
+const [userInput, setUserInput] = useState({})
 const [termsSet, setTermsSet] = useState(false)
 const [disabled, setDisabled] = useState(true)
 
@@ -54,14 +54,20 @@ function change (e) {
   function submit (e) {
     e.preventDefault()
     setUserInput(formValues)
-    axios.post("https://reqres.in/api/users", userInput)
+    
+   
+  }
+
+    useEffect(() => {
+      axios.post("https://reqres.in/api/users", userInput)
     .then(res => {
       console.log(res)
+      console.log(userInput)
     })
     .catch(err => {
       console.error(err)
     })
-  }
+    }, [userInput])
   
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => setDisabled(!valid))
@@ -111,6 +117,18 @@ function change (e) {
       validate={validate}
       submit={submit}
       />
+      <BodyStyledDiv>
+        {
+          Object.keys(userInput).map((element, index) => {
+            return (
+              <>
+              <h1>{element.charAt(0).toUpperCase()+element.substring(1)}</h1>
+              <p>{userInput[element]}</p>
+              </>
+            )
+          }) 
+        }
+      </BodyStyledDiv>
     </>
     </>
   );

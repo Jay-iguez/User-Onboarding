@@ -13,7 +13,7 @@ const formSchema = Yup.object().shape({
     password: Yup
     .string()
     .trim()
-    .required("You must creata a valid password.")
+    .required("You must create a valid password.")
     .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
     .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
     .matches(/\d/, 'Password must contain at least one number')

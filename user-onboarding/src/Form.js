@@ -98,8 +98,8 @@ export default function Form(props) {
         :
 
         <span id="error">{
-            Object.keys(formErrors).map(error => {
-               return <p>{formErrors[error]}</p>
+            Object.keys(formErrors).map((error, index) => {
+               return <p key={index}>{formErrors[error]}</p>
             })
             }</span>
     }
@@ -195,6 +195,5 @@ export default function Form(props) {
             <Terms formValues={formValues} setFormValues={setFormValues} termsSet={termsSet} setTermsSet={setTermsSet} change={change} />
             }
         </>
-        
     )
 }
