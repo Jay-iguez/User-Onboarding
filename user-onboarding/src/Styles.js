@@ -4,7 +4,7 @@ export const HeadingStyledDiv = styled.div`
 margin: 2rem 1.2rem;
 background-color: #c7edd4;
 border: 1px solid black;
-border-radius: 3rem;
+border-radius: 2rem;
 color: #2b3a33 ;
 font-family: 'Jost';
 font-size: 1.3rem;
@@ -34,4 +34,29 @@ span {
 
 export const BodyStyledDiv = styled(HeadingStyledDiv)`
 background-color: #9be8d3 ;
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+span {
+    background-color: #6255ea ;
+}
+
+#inputParent {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: #559fea  ;
+
+    input {
+        text-align: center;
+        font-size: 2rem;
+    }
+}
 `

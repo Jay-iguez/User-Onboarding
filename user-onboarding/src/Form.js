@@ -12,7 +12,49 @@ export default function Form(props) {
                 </div>
             </HeadingStyledDiv>
             <BodyStyledDiv>
-                
+                <form>
+                    <label id="inputParent"> <p>Name</p>
+                    <span></span>
+                    <input 
+                            type="text"
+                            name="name"
+                            id="nameselect"
+                            value=""
+                            placeholder="Name here please"
+                            
+                        />
+                    </label>
+                    <label id="inputParent"> <p>Email</p>
+                    <span></span>
+                    <input 
+                            type="text"
+                            name="email"
+                            id="emailselect"
+                            value=""
+                            placeholder="Email here please"
+                            
+                        />
+                    </label>
+                    <label id="inputParent"> <p>Password</p>
+                    <span></span>
+                    <input 
+                            type="text"
+                            name="password"
+                            id="passwordselect"
+                            value=""
+                            placeholder="Password here please"
+                            
+                        />
+                    </label>
+                    {
+                        <label id="inputParent">
+                            <p>Click here to view our terms of service.</p>
+                        </label>
+                    }
+                    <label id="inputParent">
+                            <button>Submit</button>
+                    </label>
+                </form>
             </BodyStyledDiv>
         </>
         

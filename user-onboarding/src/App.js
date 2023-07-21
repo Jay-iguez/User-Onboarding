@@ -1,13 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
 import {HeadingStyledDiv, BodyStyledDiv} from './Styles';
 import styled from 'styled-components'
 import Form from './Form';
 
+const initialFormValues = {
+
+}
+
 function App() {
 
 const mainBody = document.querySelector("body")
-mainBody.style.background = " #edeedf "
+mainBody.style.background = " #cdf3e7 "
+
+const [formValues, setFormValues] = useState(initialFormValues)
 
   return (
     <>
@@ -25,6 +32,11 @@ mainBody.style.background = " #edeedf "
       <p>And what you can expect.</p>
       </div>
     </HeadingStyledDiv>
+    <BodyStyledDiv>
+      <h1>Our Goal:</h1>
+      <p>At Form Laboratories Inc., we believe that forms are the gateways to meaningful connections with your audience. Our mission is simple: to empower you with the most enchanting, seamless, and user-friendly form-building solutions out there. Whether you're a seasoned developer or a curious newcomer, we've got the potions (and by potions, we mean tools!) to conjure up the perfect forms for your needs.</p>
+      <p>Convinced yet? See how you can work with us today below.</p>
+    </BodyStyledDiv>
     <BodyStyledDiv>
       <h1>Lets Get Started:</h1>
       <p>In order you to fully envelope yourself with the wonders of advanced form management and to utilize our awesome library for you to do so - we're gonna need all of YOUR info first beforehand.</p>
