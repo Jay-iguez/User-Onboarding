@@ -1,12 +1,11 @@
 import { HeadingStyledDiv, BodyStyledDiv} from "./Styles"
 
-function change (e) {
 
-}
+
 
 function Terms(props) {
 
-    const { formValues, setFormValues, termsSet, setTermsSet} = props
+    const { formValues, setFormValues, termsSet, setTermsSet, change} = props
     
     return (
         <>
@@ -53,16 +52,7 @@ function Terms(props) {
         </BodyStyledDiv>
         <BodyStyledDiv>
             <form>
-                <label id="inputParent"> <p>Accept Here</p>
-                <span></span>
-                <input
-                    type="checkbox"
-                    name="terms"
-                    id="selectterms"
-                    checked={formValues.terms}
-                    onChange={(e) => change(e)}
-                />
-                </label>
+                
                 <label id="inputParent"> 
                 <p onClick={() => setTermsSet(!termsSet)}>Click here to go back</p>
                 </label>
@@ -83,6 +73,7 @@ export default function Form(props) {
         setTermsSet, 
         intialFormValues, 
         intialFormErrors,
+        change
         } = props
 
     
@@ -133,11 +124,19 @@ export default function Form(props) {
             onChange={(e) => change(e)}
         />
     </label>
-    {
-        <label id="inputParent">
-                 <p onClick={() => setTermsSet(!termsSet)}>{formValues.terms === false ? "Click here to view our terms of service." : "Thank you for accepting, you won't immediately regret it."}</p>
-        </label>
-    }
+    <label id="inputParent">
+             <p onClick={() => setTermsSet(!termsSet)}>{formValues.terms === false ? "Click here to view our terms of service." : "Thank you for accepting, you won't immediately regret it."}</p>
+    </label>
+    <label id="inputParent"> <p>Accept TOS</p>
+                <span></span>
+                <input
+                    type="checkbox"
+                    name="terms"
+                    id="selectterms"
+                    checked={formValues.terms}
+                    onChange={(e) => change(e)}
+                />
+                </label>
     <label id="inputParent"> <p>Income</p>
     <span></span>
     <span id="income" class="alot">
@@ -145,7 +144,7 @@ export default function Form(props) {
             type="radio"
             name="money"
             id="moneyselect"
-            value="Alot"
+            value="green"
             onChange={(e) => change(e)}
         />
     </span>
@@ -154,7 +153,7 @@ export default function Form(props) {
             type="radio"
             name="money"
             id="moneyselect"
-            value="Good Amount"
+            value="yellow"
             onChange={(e) => change(e)}
         /> 
     </span>
@@ -163,7 +162,7 @@ export default function Form(props) {
             type="radio"
             name="money"
             id="moneyselect"
-            value="Financially Challenged"
+            value=""
             onChange={(e) => change(e)}
         />
     </span>
@@ -175,7 +174,7 @@ export default function Form(props) {
     </BodyStyledDiv>
             </>
             :
-            <Terms formValues={formValues} setFormValues={setFormValues} termsSet={termsSet} setTermsSet={setTermsSet} />
+            <Terms formValues={formValues} setFormValues={setFormValues} termsSet={termsSet} setTermsSet={setTermsSet} change={change} />
             }
         </>
         

@@ -21,6 +21,8 @@ const intialErrorValues = {
   money: ""
 }
 
+
+
 function App() {
 
 const mainBody = document.querySelector("body")
@@ -30,6 +32,15 @@ const [formValues, setFormValues] = useState(initialFormValues)
 const [formErrors, setFormErrors] = useState(intialErrorValues)
 const [termsSet, setTermsSet] = useState(false)
 
+function change (e) {
+  const {name, value, type, checked} = e.target
+  
+  const typeOf = type === "checkbox" ? checked : value
+  
+  setFormValues({...formValues, [name] : typeOf})
+  
+  }
+  
   return (
     <>
     <HeadingStyledDiv>
@@ -68,6 +79,7 @@ const [termsSet, setTermsSet] = useState(false)
       setTermsSet={setTermsSet} 
       initialFormValues={initialFormValues} 
       intialErrorValues={intialErrorValues}
+      change={change}
       />
     </>
     </>
