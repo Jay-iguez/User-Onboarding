@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ParentStyledDiv = styled.div`
+export const HeadingStyledDiv = styled.div`
 margin: 2rem 1.2rem;
 background-color: #c7edd4;
 border: 1px solid black;
@@ -27,6 +27,11 @@ span {
     justify-content: space-between;
 }
 
+#disclaimer {
+    font-size: 1rem;
+}
 `
 
-
+export const BodyStyledDiv = styled(HeadingStyledDiv)`
+background-color: #9be8d3 ;
+`
