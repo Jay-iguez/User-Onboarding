@@ -30,6 +30,11 @@ span {
 #disclaimer {
     font-size: 1rem;
 }
+
+#error {
+    background-color: red;
+    color: white;
+}
 `
 
 export const BodyStyledDiv = styled(HeadingStyledDiv)`
@@ -74,8 +79,6 @@ button {
 .bad {
     background-color: #f16868 ;
 }
-
-
 
 #inputParent {
     display: flex;

@@ -1,6 +1,7 @@
 import { HeadingStyledDiv, BodyStyledDiv} from "./Styles"
-
-
+import formSchema from "./formSchema"
+import { useEffect } from "react"
+import * as Yup from 'yup'
 
 
 function Terms(props) {
@@ -72,11 +73,15 @@ export default function Form(props) {
         termsSet,
         setTermsSet, 
         intialFormValues, 
-        intialFormErrors,
-        change
+        intialErrorValues,
+        change,
+        disabled,
+        setDisabled,
+        validate,
+        submit
         } = props
 
-    
+        
     return (
         <>
             {   !termsSet ?
@@ -85,12 +90,25 @@ export default function Form(props) {
             <HeadingStyledDiv>
     <div id="mainHeading">
     <h1>Account Creation:</h1>
-    <span></span>
+    {
+        formErrors === intialErrorValues ?
+
+        <span></span>
+
+        :
+
+        <span id="error">{
+            Object.keys(formErrors).map(error => {
+               return <p>{formErrors[error]}</p>
+            })
+            }</span>
+    }
+    
     <p>Input your information here.</p>
     </div>
     </HeadingStyledDiv>
     <BodyStyledDiv>
-    <form>
+    <form onSubmit={(e) => submit(e)}>
     <label id="inputParent"> <p>Name</p>
     <span></span>
     <input 
@@ -162,13 +180,13 @@ export default function Form(props) {
             type="radio"
             name="money"
             id="moneyselect"
-            value=""
+            value="red"
             onChange={(e) => change(e)}
         />
     </span>
     </label>
     <label id="inputParent">
-            <button>Submit</button>
+            <button disabled={disabled}>Submit</button>
     </label>
     </form>
     </BodyStyledDiv>

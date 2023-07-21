@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import formSchema from './formSchema';
+import * as Yup from 'yup'
+import axios from 'axios'
 import { useState, useEffect } from 'react';
 import {HeadingStyledDiv, BodyStyledDiv} from './Styles';
 import styled from 'styled-components'
@@ -30,17 +33,40 @@ mainBody.style.background = " #cdf3e7 "
 
 const [formValues, setFormValues] = useState(initialFormValues)
 const [formErrors, setFormErrors] = useState(intialErrorValues)
+const [userInput, setUserInput] = useState(initialFormValues)
 const [termsSet, setTermsSet] = useState(false)
+const [disabled, setDisabled] = useState(true)
+
+function validate(name, value) {
+  Yup.reach(formSchema, name)
+  .validate(value)
+  .then(() => setFormErrors({...formErrors, [name]: ""}))
+  .catch(err => setFormErrors({...formErrors, [name]: err.errors[0]}))
+}
 
 function change (e) {
   const {name, value, type, checked} = e.target
-  
   const typeOf = type === "checkbox" ? checked : value
-  
+  validate(name, typeOf)
   setFormValues({...formValues, [name] : typeOf})
-  
+  }
+
+  function submit (e) {
+    e.preventDefault()
+    setUserInput(formValues)
+    axios.post("https://reqres.in/api/users", userInput)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.error(err)
+    })
   }
   
+  useEffect(() => {
+    formSchema.isValid(formValues).then(valid => setDisabled(!valid))
+  }, [formValues])
+
   return (
     <>
     <HeadingStyledDiv>
@@ -80,6 +106,10 @@ function change (e) {
       initialFormValues={initialFormValues} 
       intialErrorValues={intialErrorValues}
       change={change}
+      disabled={disabled}
+      setDisabled={setDisabled}
+      validate={validate}
+      submit={submit}
       />
     </>
     </>
