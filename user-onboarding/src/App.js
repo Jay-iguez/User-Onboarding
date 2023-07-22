@@ -53,9 +53,7 @@ function change (e) {
 
   function submit (e) {
     e.preventDefault()
-    setUserInput(formValues)
-    
-   
+    setUserInput({...userInput, name: formValues.name, email: formValues.email, password: formValues.password, terms: true ? "Soul sold" : "Soul not sold", income: formValues.money.toUpperCase()})
   }
 
     useEffect(() => {

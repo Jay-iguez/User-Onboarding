@@ -31,10 +31,6 @@ span {
     font-size: 1rem;
 }
 
-#error {
-    background-color: red;
-    color: white;
-}
 `
 
 export const BodyStyledDiv = styled(HeadingStyledDiv)`

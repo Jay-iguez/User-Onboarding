@@ -90,20 +90,11 @@ export default function Form(props) {
             <HeadingStyledDiv>
     <div id="mainHeading">
     <h1>Account Creation:</h1>
-    {
-        formErrors === intialErrorValues ?
-
-        <span></span>
-
-        :
-
-        <span id="error">{
-            Object.keys(formErrors).map((error, index) => {
-               return <p key={index}>{formErrors[error]}</p>
-            })
-            }</span>
-    }
-    
+    <span>{
+        Object.keys(formErrors).map((error, index) => {
+            return <p key={index}>{formErrors[error]}</p>
+        })
+    }</span>
     <p>Input your information here.</p>
     </div>
     </HeadingStyledDiv>
