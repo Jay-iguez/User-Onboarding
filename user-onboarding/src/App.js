@@ -121,7 +121,7 @@ function change (e) {
           Object.keys(userInput).map((element, index) => {
             return (
               <>
-              <h1>{element.charAt(0).toUpperCase()+element.substring(1)}</h1>
+              <h1 key={index}>{element.charAt(0).toUpperCase()+element.substring(1)}</h1>
               <p>{userInput[element]}</p>
               </>
             )
@@ -134,3 +134,4 @@ function change (e) {
 }
 
 export default App;
+

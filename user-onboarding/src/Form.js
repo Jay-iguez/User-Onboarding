@@ -69,15 +69,10 @@ export default function Form(props) {
         formValues, 
         setFormValues, 
         formErrors, 
-        setFormErrors,
         termsSet,
         setTermsSet, 
-        intialFormValues, 
-        intialErrorValues,
         change,
         disabled,
-        setDisabled,
-        validate,
         submit
         } = props
 
@@ -177,7 +172,7 @@ export default function Form(props) {
     </span>
     </label>
     <label id="inputParent">
-            <button disabled={disabled}>Submit</button>
+            <button disabled={disabled} cy="submit">Submit</button>
     </label>
     </form>
     </BodyStyledDiv>
